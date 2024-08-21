@@ -16,9 +16,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 	EmployeeRepository employeeRepository;
 
 	@Override
-	public List<SpringBootEmployee> getEmployeeDetails() {
-		
+	public List<SpringBootEmployee> getEmployeeDetails() {		
 		return employeeRepository.findAll();
+	}
+
+	@Override
+	public SpringBootEmployee getEmployeeDetailsByID(Long id) {		
+		return employeeRepository.findById(id).orElse(null);
 	}
 
 }

@@ -8,4 +8,6 @@ public interface EmployeeService {
 	
 	List<SpringBootEmployee> getEmployeeDetails();
 
+	SpringBootEmployee getEmployeeDetailsByID(Long id);
+
 }
