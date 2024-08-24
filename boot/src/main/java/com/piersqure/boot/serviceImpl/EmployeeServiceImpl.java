@@ -25,4 +25,32 @@ public class EmployeeServiceImpl implements EmployeeService{
 		return employeeRepository.findById(id).orElse(null);
 	}
 
+	@Override
+	public SpringBootEmployee insertEmployee(SpringBootEmployee employee) {
+		return employeeRepository.save(employee);
+		
+	}
+
+	@Override
+	public void deleteEmployeeByID(Long id) {
+		employeeRepository.deleteById(id);
+		
+	}
+	
+	//employee -> for update
+	//employyeFromDB  -> from DB
+
+	@Override
+	public SpringBootEmployee updateEmployee(Long id,SpringBootEmployee employee) {
+		SpringBootEmployee employeeFromDB = employeeRepository.findById(id).orElse(null);
+		if(employeeFromDB !=null) {
+			employeeFromDB.setAddress(employee.getAddress());
+			employeeFromDB.setContact(employee.getContact());
+			employeeFromDB.setName(employee.getName());
+			employeeFromDB.setSalary(employee.getSalary());
+			return employeeRepository.save(employeeFromDB);
+		}
+		return null;
+	}
+
 }

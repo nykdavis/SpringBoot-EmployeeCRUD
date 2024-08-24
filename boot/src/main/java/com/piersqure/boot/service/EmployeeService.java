@@ -10,4 +10,10 @@ public interface EmployeeService {
 
 	SpringBootEmployee getEmployeeDetailsByID(Long id);
 
+	SpringBootEmployee insertEmployee(SpringBootEmployee employee);
+
+	void deleteEmployeeByID(Long id);
+
+	SpringBootEmployee updateEmployee(Long id,SpringBootEmployee employee);
+
 }
