@@ -16,6 +16,16 @@ import org.springframework.web.bind.annotation.RestController;
 import com.piersqure.boot.entity.SpringBootEmployee;
 import com.piersqure.boot.service.EmployeeService;
 
+/**
+ * EmployeeController is responsible for handling all the HTTP requests 
+ * related to employee operations such as getting all employees, getting an 
+ * employee by ID, inserting a new employee, updating an existing employee, 
+ * and deleting an employee.
+ * 
+ * Developer: Davis Nayak
+ * Written on: 18 Aug 2024
+ */
+
 @RestController
 @RequestMapping("/api/employee")
 public class EmployeeController {
