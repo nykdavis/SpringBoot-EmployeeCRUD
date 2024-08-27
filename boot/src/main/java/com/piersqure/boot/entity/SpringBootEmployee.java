@@ -18,7 +18,6 @@ import lombok.Data;
  */
 
 @Entity
-//@Table(name = "springbootemployee")
 @Table(name = "SPRINGBOOTEMPLOYEE")
 @Data
 @Builder

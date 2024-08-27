@@ -99,6 +99,14 @@
 						<goals>
 							<goal>report</goal>
 						</goals>
+						<configuration>
+                <excludes>
+                    
+                    <exclude>com/piersqure/boot/BootEmployeeApplication.class</exclude>
+                    <!-- Exclude all classes in a package -->
+                  <!--   <exclude>com/example/yourpackage/**</exclude>   -->
+                </excludes>
+            </configuration>
 					</execution>
 				</executions>
 			</plugin>
