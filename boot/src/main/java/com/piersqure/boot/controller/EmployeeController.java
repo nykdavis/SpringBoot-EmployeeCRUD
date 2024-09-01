@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.piersqure.boot.entity.SpringBootEmployee;
+import com.piersqure.boot.exception.EmployeeNotFoundException;
 import com.piersqure.boot.service.EmployeeService;
 
 /**
@@ -42,6 +43,11 @@ public class EmployeeController {
 	@GetMapping("/getEmployee/{id}")
 	public ResponseEntity<SpringBootEmployee> getEmployeeByID(@PathVariable Long id){
 		SpringBootEmployee employee = service.getEmployeeDetailsByID(id);
+		System.out.println("Hie");
+		if(employee == null) {
+			System.out.println("Hello");
+			throw new EmployeeNotFoundException("Employee not found with id: " + id);
+		}
 		return ResponseEntity.ok(employee);
 	}
 	
