@@ -175,7 +175,7 @@ public class EmployeeControllerTest {
                 .contentType(MediaType.APPLICATION_JSON));
 
         // then - verify the output
-        response.andExpect(MockMvcResultMatchers.status().isNoContent())
+        response.andExpect(MockMvcResultMatchers.status().isNotFound())
                 .andDo(print());
     }
 	 

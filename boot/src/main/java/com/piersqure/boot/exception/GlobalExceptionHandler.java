@@ -23,6 +23,17 @@ public class GlobalExceptionHandler {
 		
 		return new ResponseEntity<>(response,HttpStatus.NOT_FOUND);
 	}
+    
+    // Handle specific exception
+    @ExceptionHandler(EmployeeAlreadyExistsException.class)
+    public ResponseEntity<Map<String, Object>> handleEmployeeAlreadyExistsException(EmployeeAlreadyExistsException ex, WebRequest request) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("timestamp", LocalDateTime.now());
+        response.put("message", ex.getMessage());
+        response.put("details", request.getDescription(false));
+
+        return new ResponseEntity<>(response, HttpStatus.CONFLICT);
+    }
 	
 	// Handle global exceptions
     @ExceptionHandler(Exception.class)
