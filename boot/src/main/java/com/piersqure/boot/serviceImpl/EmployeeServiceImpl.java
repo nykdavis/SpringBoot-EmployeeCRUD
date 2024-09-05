@@ -9,6 +9,8 @@ import com.piersqure.boot.dao.EmployeeRepository;
 import com.piersqure.boot.entity.SpringBootEmployee;
 import com.piersqure.boot.service.EmployeeService;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * EmployeeServiceImpl is a service implementation class that provides concrete 
  * methods for managing employee-related operations. This class interacts with 
@@ -19,6 +21,7 @@ import com.piersqure.boot.service.EmployeeService;
  */
 
 @Service
+@Slf4j
 public class EmployeeServiceImpl implements EmployeeService {
 
 	@Autowired
